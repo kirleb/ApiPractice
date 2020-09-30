@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace ApiPractice.Data
 {
-    public class MockApiPracticeRepo : IApiPracticeRepo
+    public class MockApiPracticeRepo : IApiPracticeRepo //implementation of the interface repo
     {
         public IEnumerable<Command> GetAppCommands()
         {
