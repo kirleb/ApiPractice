@@ -1,4 +1,9 @@
-﻿namespace ApiPractice.Models
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+
+namespace ApiPractice.Models
 {
     public class Command
     {
