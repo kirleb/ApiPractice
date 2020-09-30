@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace ApiPractice.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/commands")]
     [ApiController]
     public class CommandsController : ControllerBase
     {
