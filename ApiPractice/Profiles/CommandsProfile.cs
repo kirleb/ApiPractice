@@ -9,6 +9,7 @@ namespace ApiPractice.Profiles
         public CommandsProfile()
         {
             CreateMap<Command, CommandReadDto>(); //maps command objects to Dtos
+            CreateMap<CommandCreateDto, Command>();
         }
     }
 }
