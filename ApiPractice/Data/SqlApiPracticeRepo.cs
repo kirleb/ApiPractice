@@ -12,6 +12,7 @@ namespace ApiPractice.Data
         {
             _context = context;
         } 
+
         public IEnumerable<Command> GetAllCommands()
         {
             return _context.Commands.ToList();
