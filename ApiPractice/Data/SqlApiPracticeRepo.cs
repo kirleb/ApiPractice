@@ -1,4 +1,5 @@
 ﻿using ApiPractice.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -11,7 +12,8 @@ namespace ApiPractice.Data
         public SqlApiPracticeRepo(ApiPracticeContext context)
         {
             _context = context;
-        } 
+        }
+
 
         public IEnumerable<Command> GetAllCommands()
         {
@@ -22,5 +24,22 @@ namespace ApiPractice.Data
         {
             return _context.Commands.FirstOrDefault(p => p.Id == id); //Id is the id in Commands id is the parameter
         }
+
+
+        public void CreateCommand(Command cmd)
+        {
+            if (cmd == null)
+            {
+                throw new ArgumentNullException(nameof(cmd));
+            }
+
+            _context.Commands.Add(cmd);
+        }
+
+        public bool SaveChanges()
+        {
+            return (_context.SaveChanges() >= 0); //executes save changes and returns true if successful
+        }
+
     }
 }

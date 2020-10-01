@@ -21,5 +21,15 @@ namespace ApiPractice.Data
         {
             return new Command { Id = 0, HowTo = "Boil an Egg", Line = "Boil Water", Platform = "Kettle and Pan" };
         }
+
+        void IApiPracticeRepo.CreateCommand(Command cmd) //the two not implemented were made later just put them here to avoid errors
+        {                                                //this is no longer in use just an example
+            throw new System.NotImplementedException();
+        }
+
+        bool IApiPracticeRepo.SaveChanges()
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }
