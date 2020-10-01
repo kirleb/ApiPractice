@@ -5,9 +5,9 @@ using System.Collections.Generic;
 
 namespace ApiPractice.Controllers
 {
-    [Route("api/commands")]
+    [Route("api/[controller]")] //can put it in explicitly and is probs better but leaving it to show
     [ApiController]
-    public class CommandsController : ControllerBase
+    public class CommandsController : ControllerBase   //the bit before Controller is [controller] == "Commands"
     {
         private readonly MockApiPracticeRepo _repository = new MockApiPracticeRepo();
         [HttpGet]
