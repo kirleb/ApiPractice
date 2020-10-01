@@ -8,7 +8,7 @@ namespace ApiPractice.Data
 {
     public interface IApiPracticeRepo //interface that defines methods for the mock repo but doen't implement them
     {
-        IEnumerable<Command> GetAppCommands();
+        IEnumerable<Command> GetAllCommands();
         Command GetCommandById(int Id);
     }
 }

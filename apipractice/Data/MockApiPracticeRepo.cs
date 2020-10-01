@@ -5,7 +5,7 @@ namespace ApiPractice.Data
 {
     public class MockApiPracticeRepo : IApiPracticeRepo //implementation of the interface repo
     {
-        public IEnumerable<Command> GetAppCommands()
+        public IEnumerable<Command> GetAllCommands()
         {
             var commands = new List<Command>
             {
