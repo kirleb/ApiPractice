@@ -9,7 +9,12 @@ namespace ApiPractice.Controllers
     [ApiController]
     public class CommandsController : ControllerBase   //the bit before Controller is [controller] == "Commands"
     {
-        private readonly MockApiPracticeRepo _repository = new MockApiPracticeRepo();
+        private readonly IApiPracticeRepo _repository;
+
+        public CommandsController(IApiPracticeRepo repository) // ensure interface is public as default is internal
+        {
+            _repository = repository;
+        }
         [HttpGet]
         public ActionResult <IEnumerable<Command>> GetAllCommands()
         {
