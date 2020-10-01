@@ -32,7 +32,7 @@ namespace ApiPractice
 
             services.AddControllers();
 
-            services.AddScoped<IApiPracticeRepo, MockApiPracticeRepo>();
+            services.AddScoped<IApiPracticeRepo, SqlApiPracticeRepo>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
