@@ -28,27 +28,24 @@ namespace ApiPractice.Controllers
         }
 
         [HttpGet("{id}")] // the id bit means the uri requested needs a number (as id is int type) on the end to call it
-        public ActionResult<CommandReadDto> GetCommandById(int id)
+        public ActionResult<Command> GetCommandById(int id)
         {
             var commandItem = _repository.GetCommandById(id);
             if (commandItem != null)
             {
-                return Ok(_mapper.Map<CommandReadDto>(commandItem));
+                return Ok(commandItem);
             }
             return NotFound();
         }
 
         [HttpPost]
-        public ActionResult<CommandReadDto> CreateCommand(CommandCreateDto commandCreateDto)
+        public ActionResult<Command> CreateCommand(CommandCreateDto commandCreateDto)
         {
             var commandModel = _mapper.Map<Command>(commandCreateDto);
             _repository.CreateCommand(commandModel);
             _repository.SaveChanges();
 
-            var commandReadDto = _mapper.Map<CommandReadDto>(commandModel);
-
-
-            return CreatedAtAction(nameof(GetCommandById), new { Id = commandReadDto.Id }, commandReadDto);
+            return CreatedAtAction(nameof(GetCommandById), new { Id = commandModel.Id }, commandModel);
         }
     }
 }
