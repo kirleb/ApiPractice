@@ -11,6 +11,7 @@ namespace ApiPractice.Profiles
             CreateMap<Command, CommandReadDto>(); //maps command objects to Dtos
             CreateMap<CommandCreateDto, Command>();
             CreateMap<CommandUpdateDto, Command>();
+            CreateMap<Command, CommandUpdateDto>();
         }
     }
 }
