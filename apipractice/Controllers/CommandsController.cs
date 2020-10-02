@@ -3,6 +3,7 @@ using ApiPractice.Dtos;
 using ApiPractice.Models;
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Collections.Generic;
 
 namespace ApiPractice.Controllers
@@ -46,6 +47,23 @@ namespace ApiPractice.Controllers
             _repository.SaveChanges();
 
             return CreatedAtAction(nameof(GetCommandById), new { Id = commandModel.Id }, commandModel);
+        }
+        
+        [HttpPut("{id}")]
+        public ActionResult UpdateCommand(int id,CommandUpdateDto commandUpdateDto)
+        {
+            var commandModelFromRepo = _repository.GetCommandById(id);
+            if(commandModelFromRepo == null)
+            {
+                return NotFound();
+            }
+
+            _mapper.Map(commandUpdateDto, commandModelFromRepo);
+
+            _repository.UpdateCommand(commandModelFromRepo); //doesn't do anything but implementation changes to use this it is already here
+            _repository.SaveChanges();
+
+            return NoContent();
         }
     }
 }
