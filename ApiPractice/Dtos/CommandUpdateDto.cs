@@ -2,8 +2,8 @@
 
 namespace ApiPractice.Dtos
 {
-    public class CommandCreateDto : CommandCreateAndUpdateDto
+    public class CommandUpdateDto : CommandCreateAndUpdateDto
     {
-      
+
     }
 }
