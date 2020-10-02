@@ -45,5 +45,14 @@ namespace ApiPractice.Data
             return (_context.SaveChanges() >= 0); //executes save changes and returns true if successful
         }
 
+        public void DeleteCommand(Command cmd)
+        {
+            if (cmd == null)
+            {
+                throw new ArgumentNullException(nameof(cmd));
+            }
+
+            _context.Commands.Remove(cmd);
+        }
     }
 }

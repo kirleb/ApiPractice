@@ -27,6 +27,11 @@ namespace ApiPractice.Data
             throw new System.NotImplementedException();
         }
 
+        void IApiPracticeRepo.DeleteCommand(Command cmd)
+        {
+            throw new System.NotImplementedException();
+        }
+
         bool IApiPracticeRepo.SaveChanges()
         {
             throw new System.NotImplementedException();
