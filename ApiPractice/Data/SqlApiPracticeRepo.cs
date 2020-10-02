@@ -35,6 +35,10 @@ namespace ApiPractice.Data
 
             _context.Commands.Add(cmd);
         }
+        public void UpdateCommand(Command cmd)
+        {
+            throw new NotImplementedException();
+        }
 
         public bool SaveChanges()
         {

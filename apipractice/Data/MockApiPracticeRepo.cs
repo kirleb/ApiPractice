@@ -31,5 +31,10 @@ namespace ApiPractice.Data
         {
             throw new System.NotImplementedException();
         }
+
+        void IApiPracticeRepo.UpdateCommand(Command cmd)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }
